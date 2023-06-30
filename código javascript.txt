@@ -1,0 +1,86 @@
+document.getElementById('cadastroForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // valores do formulário
+    const nome = document.getElementById('nome').value;
+    const cpf = document.getElementById('cpf').value;
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
+
+    document.getElementById('nome').value = '';
+    document.getElementById('cpf').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('senha').value = '';
+  });
+
+   // Função para realizar o login de cadastro
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById('loginEmail').value;
+    const senha = document.getElementById('loginSenha').value;
+
+    document.getElementById('loginEmail').value = '';
+    document.getElementById('loginSenha').value = '';
+  });
+
+  // Função para cadastrar a conta corrente
+    document.getElementById('contaCorrenteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Obter os valores do formulário
+    const usuario = document.getElementById('usuario').value;
+    const conta = document.getElementById('conta').value;
+
+
+    // Limpar o formulário após o cadastro
+    document.getElementById('usuario').value = '';
+    document.getElementById('conta').value = '';
+  });
+
+  // Função para consultar saldo da conta corrente selecionada
+    function consultarSaldo() {
+    var contaCorrente = document.getElementById('contaCorrenteSelect').value;
+
+        document.getElementById('saldoForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+  
+        // Obter o número da conta corrente
+        const contaCorrente = document.getElementById('contaCorrente').value;
+  
+        // Realizar a consulta de saldo 
+        const saldo = consultarSaldo(contaCorrente);
+  
+        document.getElementById('resultado').innerText = 'Saldo da conta corrente ' + contaCorrente + ': ' + saldo;
+      });
+
+    
+     document.getElementById('historicoForm').addEventListener('submit', function(e) {
+     e.preventDefault();
+
+   
+    const dataInicial = document.getElementById('dataInicial').value;
+    const dataFinal = document.getElementById('dataFinal').value;
+
+    document.getElementById('dataInicial').value = '';
+    document.getElementById('dataFinal').value = '';
+  });
+    document.getElementById('movimentoForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const valor = document.getElementById('valor').value;
+    const contaDestino = document.getElementById('contaDestino').value;
+
+    document.getElementById('valor').value = '';
+    document.getElementById('contaDestino').value = '';
+  });
+
+    document.getElementById('depositoForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const valorDeposito = document.getElementById('valorDeposito').value;
+    const contaDestinoDeposito = document.getElementById('contaDestinoDeposito').value;
+
+    document.getElementById('valorDeposito').value = '';
+    document.getElementById('contaDestinoDeposito').value = '';
+  });
